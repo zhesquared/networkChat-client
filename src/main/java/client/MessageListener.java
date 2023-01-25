@@ -15,13 +15,9 @@ public class MessageListener implements Runnable {
         this.in = in;
     }
 
-    public void setLogger(Logger logger) {
-        this.logger = logger;
-    }
-
     @Override
     public void run() {
-        while (readMessage());
+        while (readMessage()) ;
         try {
             in.close();
         } catch (IOException exception) {

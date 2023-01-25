@@ -12,10 +12,6 @@ public class MessageDispatcher implements Runnable {
     private final Scanner scanner = new Scanner(System.in);
     private Logger logger = Logger.getInstance();
 
-    public void setLogger(Logger logger) {
-        this.logger = logger;
-    }
-
     public MessageDispatcher(PrintWriter out) {
         this.out = out;
     }
@@ -35,7 +31,7 @@ public class MessageDispatcher implements Runnable {
     public boolean sendMessage(String message) {
         out.println(message);
         if ("/exit".equalsIgnoreCase(message)) {
-            String leave = "you have left left chat";
+            String leave = "you have left this chat";
             logger.log(leave, LogType.INFO, false);
             return false;
         } else {
